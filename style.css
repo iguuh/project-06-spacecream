@@ -26,6 +26,7 @@
 
 body {
     background: var(--bc-primary);
+
 }
 
 header {
@@ -58,13 +59,18 @@ main {
     display: grid;
     gap: 3.5rem;
     
+}
+
+main img {
+    width: 38rem;
 
 }
 
 main p {
+    margin: 0 auto;
     font-family: var(--ff-second);
     color: var(--fc-second);
-
+    width: 38rem;
     margin: 4.2rem auto;
     font-size: 2rem;
     font-weight: 400;
@@ -127,3 +133,4 @@ main div span {
         transform: translateY(0px);
     }
 }
+

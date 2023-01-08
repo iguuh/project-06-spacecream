@@ -8,6 +8,8 @@
 :root {
     --ff-primary: 'Staatliches', sans-serif;
     --ff-second: 'Palanquin', sans-serif;
+    --ff-third: 'open-sans', sans-serif;
+    --ff-four: 'Roboto', open-sans;
     --bc-primary: hsl(var(--hue), 100%, 97%);
     --bc-second: hsl(var(--hue), 17%, 62%);
     --bc-third: hsl(var(--hue), 18%, 79%);
@@ -56,7 +58,6 @@ header h1 {
 }
 
 main {
-    display: grid;
     gap: 3.5rem;
     
 }
@@ -102,14 +103,18 @@ main div span {
     animation: topdown 1200ms backwards;
 }
 
-
+.cards {
+    display: grid;
+    
+}
 .card {
     margin-top: 6.3rem;
     margin:0 auto;
     position: relative;
-
+   
     animation: downtop 1400ms backwards;
 }
+
 
 @keyframes downtop {
     0% {
@@ -134,3 +139,93 @@ main div span {
     }
 }
 
+@media(max-width:899px){
+    footer, header p {
+        display:none;
+    }
+}
+
+@media (min-width:900px) {
+    .pFirst {
+        display: none;
+    }
+    header{
+        width: 37rem;
+        height: 100vh;
+    }
+    header p {
+        font-family: var(--ff-third);
+        text-align: center;
+        color: hsl(var(--hue), 0%, 100%);
+        margin: 5.2rem 4.8rem;
+        font-weight: 400;
+        line-height: 2rem;
+        font-size: 1.4rem;
+    }
+    body {
+        display: flex;
+        margin:0;
+    }
+    main div span {
+        top: 8rem;
+        right: 8rem;
+    }
+    .card img {
+        width: auto;
+        height: auto;
+        
+    }
+    .card img:hover {
+        transform: scale(1.1);
+        opacity: 0.3;
+        transition: 300ms;
+    }
+
+    
+    .page{
+        margin:0;
+        width: 1280px;
+        height: 720px;
+        
+        position: absolute;
+        margin: -5rem 37.7rem;
+        
+    }
+    .cards{
+        margin:5rem 10rem;
+        gap:3.2rem;
+        grid-template-areas: 
+        'A B C'
+        'D B E'
+        'D F E';
+    }
+
+    .cards .card:nth-child(1){
+        grid-area: A;
+    }
+    .cards .card:nth-child(2){
+        grid-area: B;
+    }
+    .cards .card:nth-child(3){
+        grid-area: C;
+    }
+    .cards .card:nth-child(4){
+        grid-area: D;
+    }
+    .cards .card:nth-child(5){
+        grid-area: F;
+    }  
+    .cards .card:nth-child(6){
+        grid-area: E;
+    }
+
+    footer {
+        font-family: var(--ff-four);
+        position: relative;
+        right: -50rem;
+        bottom: -90rem;
+        object-fit: cover;
+        height: fit-content;
+        font-size: 2.4rem;
+    }
+}
